@@ -25,6 +25,10 @@ function checkUserSurname(){
         document.getElementById("userSurnameError").style.display = "none";
     }
 }
+// xxxxxxxxxx Game Site Username Validation xxxxxxxxxx
+function checkGameSiteUsername(){
+    var gameSiteUsername = document.getElementById("gameSiteUsername").value;
+}
 // xxxxxxxxxx Email Validation xxxxxxxxxx
 function checkUserEmail(){
     var userEmail = document.getElementById("userEmail");
