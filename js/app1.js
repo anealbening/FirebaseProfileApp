@@ -297,7 +297,7 @@ function signOut(){
         // Sign-out successful.
         swal({
             type: 'successfull',
-            title: 'Signed Out', 
+            title: 'Signed Out from The Game Site Developer Platform', 
         }).then((value) => {
             setTimeout(function(){
                 window.location.replace("../index.html");
