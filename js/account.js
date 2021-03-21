@@ -222,7 +222,7 @@ firebase.auth().onAuthStateChanged((user)=>{
         firebaseRefKey.on('value', (dataSnapShot)=>{
             document.getElementById("userPfFullName").innerHTML = dataSnapShot.val().userFullName;
             document.getElementById("userPfSurname").innerHTML = dataSnapShot.val().userSurname;
-            document.getElementById("userPfRecommendation").innerHTML = dataSnapShot.val().recommendedBy;
+            document.getElementById("recommendedBy").innerHTML = dataSnapShot.val().recommendedBy;
             // userEmail = dataSnapShot.val().userEmail;
             // userPassword = dataSnapShot.val().userPassword;
             document.getElementById("userPfFb").setAttribute('href', dataSnapShot.val().userFb);
@@ -240,14 +240,14 @@ function showEditProfileForm(){
     document.getElementById("editProfileForm").style.display = "block"
     var userPfFullName = document.getElementById("userPfFullName").innerHTML;
     var userPfSurname = document.getElementById("userPfSurname").innerHTML;
-    var userPfRecommendation = document.getElementbyId("userPfRecommendation").innerHTML;
+    var recommendedBy = document.getElementbyId("recommendedBy").innerHTML;
     var userPfFb = document.getElementById("userPfFb").getAttribute("href");
     var userPfTw = document.getElementById("userPfTw").getAttribute("href");
     var userPfGp = document.getElementById("userPfGp").getAttribute("href");
     var userPfBio = document.getElementById("userPfBio").innerHTML;
     document.getElementById("userFullName").value = userPfFullName; 
     document.getElementById("userSurname").value = userPfSurname;
-    document.getElementById("recommendedBy").value = userPfRecommendation; 
+    document.getElementById("recommendedBy").value = recommendedBy; 
     document.getElementById("userFacebook").value = userPfFb; 
     document.getElementById("userTwitter").value = userPfTw; 
     document.getElementById("userGooglePlus").value = userPfGp; 
