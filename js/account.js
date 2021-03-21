@@ -27,7 +27,7 @@ function checkUserSurname(){
 }
 // xxxxxxxxxx Game Site Username Validation xxxxxxxxxx
 function checkGameSiteUsername(){
-    var gameSiteUsername = document.getElementById("gameSiteUsername").value;
+    var recommendedBy = document.getElementById("recommendedBy").value;
 }
 // xxxxxxxxxx Email Validation xxxxxxxxxx
 function checkUserEmail(){
@@ -75,7 +75,7 @@ function checkUserBio(){
 function signUp(){
     var userFullName = document.getElementById("userFullName").value;
     var userSurname = document.getElementById("userSurname").value;
-    var gameSiteUsername = document.getElementById("gameSiteUsername").value;
+    var recommendedBy = document.getElementById("recommendedBy").value;
     var userEmail = document.getElementById("userEmail").value;
     var userPassword = document.getElementById("userPassword").value;
     var userFullNameFormate = /^([A-Za-z.\s_-])/;    
@@ -105,7 +105,7 @@ function signUp(){
             var userData = {
                 userFullName: userFullName,
                 userSurname: userSurname,
-                gameSiteUsername: gameSiteUsername,
+                recommendedBy: recommendedBy,
                 userEmail: userEmail,
                 userPassword: userPassword,
                 userFb: "https://www.facebook.com/",
@@ -215,7 +215,7 @@ firebase.auth().onAuthStateChanged((user)=>{
         firebaseRefKey.on('value', (dataSnapShot)=>{
             document.getElementById("userPfFullName").innerHTML = dataSnapShot.val().userFullName;
             document.getElementById("userPfSurname").innerHTML = dataSnapShot.val().userSurname;
-            document.getElementById("userPfRecommendation").innerHTML = dataSnapShot.val().gameSiteUsername;
+            document.getElementById("userPfRecommendation").innerHTML = dataSnapShot.val().recommendedBy;
             // userEmail = dataSnapShot.val().userEmail;
             // userPassword = dataSnapShot.val().userPassword;
             document.getElementById("userPfFb").setAttribute('href', dataSnapShot.val().userFb);
@@ -240,7 +240,7 @@ function showEditProfileForm(){
     var userPfBio = document.getElementById("userPfBio").innerHTML;
     document.getElementById("userFullName").value = userPfFullName; 
     document.getElementById("userSurname").value = userPfSurname;
-    document.getElementById("gameSiteUsername").value = userPfRecommendation;
+    document.getElementById("recommendedBy").value = userPfRecommendation;
     document.getElementById("userFacebook").value = userPfFb; 
     document.getElementById("userTwitter").value = userPfTw; 
     document.getElementById("userGooglePlus").value = userPfGp; 
@@ -255,7 +255,7 @@ function hideEditProfileForm(){
 function saveProfile(){
     let userFullName = document.getElementById("userFullName").value 
     let userSurname = document.getElementById("userSurname").value
-    let gameSiteUsername = document.getElementById("gameSiteUsername").value 
+    let recommendedBy = document.getElementById("recommendedBy").value 
     let userFacebook = document.getElementById("userFacebook").value 
     let userTwitter = document.getElementById("userTwitter").value 
     let userGooglePlus = document.getElementById("userGooglePlus").value 
@@ -276,7 +276,7 @@ function saveProfile(){
         var userData = {
             userFullName: userFullName,
             userSurname: userSurname,
-            gameSiteUsername: gameSiteUsername,
+            recommendedBy: recommendedBy,
             userFb: userFacebook,
             userTw: userTwitter,
             userGp: userGooglePlus,
