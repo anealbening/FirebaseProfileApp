@@ -215,7 +215,7 @@ firebase.auth().onAuthStateChanged((user)=>{
         firebaseRefKey.on('value', (dataSnapShot)=>{
             document.getElementById("userPfFullName").innerHTML = dataSnapShot.val().userFullName;
             document.getElementById("userPfSurname").innerHTML = dataSnapShot.val().userSurname;
-            document.getElementById("userPfRecommendation").innerHTML = dataSnapShot.val().recommendedBy;
+            //document.getElementById("userPfRecommendation").innerHTML = dataSnapShot.val().recommendedBy;
             // userEmail = dataSnapShot.val().userEmail;
             // userPassword = dataSnapShot.val().userPassword;
             document.getElementById("userPfFb").setAttribute('href', dataSnapShot.val().userFb);
