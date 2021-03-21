@@ -27,7 +27,7 @@ function checkUserSurname(){
 }
 // xxxxxxxxxx Game Site Username Validation xxxxxxxxxx
 function checkGameSiteUsername(){
-    var gameSiteUsername = document.getElementById("gameSiteUsername").value;
+    var recommendedBy = document.getElementById("recommendedBy").value;
 }
 // xxxxxxxxxx Email Validation xxxxxxxxxx
 function checkUserEmail(){
@@ -75,7 +75,7 @@ function checkUserBio(){
 function signUp(){
     var userFullName = document.getElementById("userFullName").value;
     var userSurname = document.getElementById("userSurname").value;
-    var gameSiteUsername = document.getElementById("gameSiteUsername").value;
+    var recommendedBy = document.getElementById("recommendedBy").value;
     var userEmail = document.getElementById("userEmail").value;
     var userPassword = document.getElementById("userPassword").value;
     var userFullNameFormate = /^([A-Za-z.\s_-])/;    
@@ -105,7 +105,7 @@ function signUp(){
             var userData = {
                 userFullName: userFullName,
                 userSurname: userSurname,
-                gameSiteUsername: gameSiteUsername,
+                recommendedBy: recommendedBy,
                 userEmail: userEmail,
                 userPassword: userPassword,
                 userFb: "https://www.facebook.com/",
