@@ -28,7 +28,14 @@ function checkUserSurname(){
 // xxxxxxxxxx Game Site Username Validation xxxxxxxxxx
 function checkGameSiteUsername(){
     var recommendedBy = document.getElementById("recommendedBy").value;
+    var flag = false;
+    if(flag){
+        document.getElementById("userRecommendError").style.display = "block";
+    }else{
+        document.getElementById("userRecommendError").style.display = "none";
+    }
 }
+    
 // xxxxxxxxxx Email Validation xxxxxxxxxx
 function checkUserEmail(){
     var userEmail = document.getElementById("userEmail");
@@ -215,7 +222,7 @@ firebase.auth().onAuthStateChanged((user)=>{
         firebaseRefKey.on('value', (dataSnapShot)=>{
             document.getElementById("userPfFullName").innerHTML = dataSnapShot.val().userFullName;
             document.getElementById("userPfSurname").innerHTML = dataSnapShot.val().userSurname;
-            //document.getElementById("userPfRecommendation").innerHTML = dataSnapShot.val().recommendedBy;
+            document.getElementById("userPfRecommendation").innerHTML = dataSnapShot.val().recommendedBy;
             // userEmail = dataSnapShot.val().userEmail;
             // userPassword = dataSnapShot.val().userPassword;
             document.getElementById("userPfFb").setAttribute('href', dataSnapShot.val().userFb);
