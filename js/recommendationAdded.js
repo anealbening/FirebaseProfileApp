@@ -25,9 +25,15 @@ function checkUserSurname(){
         document.getElementById("userSurnameError").style.display = "none";
     }
 }
-// xxxxxxxxxx Game Site Username Validation xxxxxxxxxx
+// xxxxxxxxxx Recommendation Validation Check - Who recommended user to site? xxxxxxxxxx
 function recommendation(){
     var recommendation = document.getElementById("recommendation").value;
+    var flag = false;
+    if(flag){
+        document.getElementById("userRecError").style.display = "block";
+    }else{
+        document.getElementById("userRecError").style.display = "none";
+    }
 }
 // xxxxxxxxxx Email Validation xxxxxxxxxx
 function checkUserEmail(){
@@ -215,6 +221,7 @@ firebase.auth().onAuthStateChanged((user)=>{
         firebaseRefKey.on('value', (dataSnapShot)=>{
             document.getElementById("userPfFullName").innerHTML = dataSnapShot.val().userFullName;
             document.getElementById("userPfSurname").innerHTML = dataSnapShot.val().userSurname;
+            document.getElementById("userPfRecommendation").innerHTML = dataSnapShot.val().recommendation;
             // userEmail = dataSnapShot.val().userEmail;
             // userPassword = dataSnapShot.val().userPassword;
             document.getElementById("userPfFb").setAttribute('href', dataSnapShot.val().userFb);
@@ -232,12 +239,14 @@ function showEditProfileForm(){
     document.getElementById("editProfileForm").style.display = "block"
     var userPfFullName = document.getElementById("userPfFullName").innerHTML;
     var userPfSurname = document.getElementById("userPfSurname").innerHTML;
+    var userPfRecommendation = document.getElementById("userPfRecommendation").innerHTML;
     var userPfFb = document.getElementById("userPfFb").getAttribute("href");
     var userPfTw = document.getElementById("userPfTw").getAttribute("href");
     var userPfGp = document.getElementById("userPfGp").getAttribute("href");
     var userPfBio = document.getElementById("userPfBio").innerHTML;
     document.getElementById("userFullName").value = userPfFullName; 
     document.getElementById("userSurname").value = userPfSurname; 
+    document.getElementById("recommendation").value = userPfRecommendation;
     document.getElementById("userFacebook").value = userPfFb; 
     document.getElementById("userTwitter").value = userPfTw; 
     document.getElementById("userGooglePlus").value = userPfGp; 
@@ -251,7 +260,8 @@ function hideEditProfileForm(){
 // xxxxxxxxxx Save profile and update database xxxxxxxxxx
 function saveProfile(){
     let userFullName = document.getElementById("userFullName").value 
-    let userSurname = document.getElementById("userSurname").value 
+    let userSurname = document.getElementById("userSurname").value
+    let recommendation = document.getElementById("recommendation").value
     let userFacebook = document.getElementById("userFacebook").value 
     let userTwitter = document.getElementById("userTwitter").value 
     let userGooglePlus = document.getElementById("userGooglePlus").value 
@@ -272,6 +282,7 @@ function saveProfile(){
         var userData = {
             userFullName: userFullName,
             userSurname: userSurname,
+            recommendation: recommendation,
             userFb: userFacebook,
             userTw: userTwitter,
             userGp: userGooglePlus,
