@@ -246,7 +246,7 @@ function showEditProfileForm(){
     var userPfBio = document.getElementById("userPfBio").innerHTML;
     document.getElementById("userFullName").value = userPfFullName; 
     document.getElementById("userSurname").value = userPfSurname; 
-    document.getElementById("recommendation").value = userPfRecommendation;
+   // document.getElementById("recommendation").value = userPfRecommendation;
     document.getElementById("userFacebook").value = userPfFb; 
     document.getElementById("userTwitter").value = userPfTw; 
     document.getElementById("userGooglePlus").value = userPfGp; 
