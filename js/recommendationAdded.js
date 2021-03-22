@@ -221,7 +221,7 @@ firebase.auth().onAuthStateChanged((user)=>{
         firebaseRefKey.on('value', (dataSnapShot)=>{
             document.getElementById("userPfFullName").innerHTML = dataSnapShot.val().userFullName;
             document.getElementById("userPfSurname").innerHTML = dataSnapShot.val().userSurname;
-            document.getElementById("userPfRecommendation").innerHTML = dataSnapShot.val().recommendation;
+            //document.getElementById("userPfRecommendation").innerHTML = dataSnapShot.val().recommendation;
             // userEmail = dataSnapShot.val().userEmail;
             // userPassword = dataSnapShot.val().userPassword;
             document.getElementById("userPfFb").setAttribute('href', dataSnapShot.val().userFb);
@@ -239,7 +239,7 @@ function showEditProfileForm(){
     document.getElementById("editProfileForm").style.display = "block"
     var userPfFullName = document.getElementById("userPfFullName").innerHTML;
     var userPfSurname = document.getElementById("userPfSurname").innerHTML;
-    var userPfRecommendation = document.getElementById("userPfRecommendation").innerHTML;
+    //var userPfRecommendation = document.getElementById("userPfRecommendation").innerHTML;
     var userPfFb = document.getElementById("userPfFb").getAttribute("href");
     var userPfTw = document.getElementById("userPfTw").getAttribute("href");
     var userPfGp = document.getElementById("userPfGp").getAttribute("href");
@@ -261,7 +261,7 @@ function hideEditProfileForm(){
 function saveProfile(){
     let userFullName = document.getElementById("userFullName").value 
     let userSurname = document.getElementById("userSurname").value
-    let recommendation = document.getElementById("recommendation").value
+    //let recommendation = document.getElementById("recommendation").value
     let userFacebook = document.getElementById("userFacebook").value 
     let userTwitter = document.getElementById("userTwitter").value 
     let userGooglePlus = document.getElementById("userGooglePlus").value 
@@ -282,7 +282,7 @@ function saveProfile(){
         var userData = {
             userFullName: userFullName,
             userSurname: userSurname,
-            recommendation: recommendation,
+           // recommendation: recommendation,
             userFb: userFacebook,
             userTw: userTwitter,
             userGp: userGooglePlus,
